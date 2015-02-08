@@ -1,4 +1,4 @@
-# plot2.R - Time Series of Global Active Power
+# plot3.R - Time Series of Global Active Power by submeter
 # Set working directory
 # dir <- "~/workspace/r_workspace/coursera/Expolaratory/ExData_Plotting1/"
 # setwd(dir)
@@ -17,16 +17,25 @@ data <- subset(data,
                 as.Date(DateTime) <= as.Date("2007-02-02")
               )
 
-# Open plot2.png
-png("plot2.png", height=480, width=480)
+# Open plot3.png
+png("plot3.png", height=480, width=480)
 
-# Build plot
+# Builds plot and draws first sub_metering_1 plot
 plot(data$DateTime,
-      data$Global_active_power,
+      data$Sub_metering_1,
       pch=NA,
       xlab="",
-      type = "l",
-      ylab="Global Active Power (kilowatts)"
+      type="l",
+      ylab="Energy sub metering"
     )
+lines(data$DateTime, data$Sub_metering_2, col='red')
+lines(data$DateTime, data$Sub_metering_3, col='blue')
+# Draw the legends
+legend('topright',
+        c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
+        lty = c(1,1,1),
+        col = c('black', 'red', 'blue')
+      )
+
 # Close PNG file
 dev.off()

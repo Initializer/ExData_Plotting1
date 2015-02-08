@@ -1,7 +1,7 @@
 # plot1.R - Histogram of Global Active Power
 # # Set working directory
-dir <- "~/workspace/r_workspace/coursera/Expolaratory/ExData_Plotting1/"
-setwd(dir)
+# dir <- "~/workspace/r_workspace/coursera/Expolaratory/ExData_Plotting1/"
+# setwd(dir)
 # Set col classes for faster loading
 col_classes <- c('character', 'character', rep('numeric', 7))
 # Read data, convert dates and subset on two days in February 2007
